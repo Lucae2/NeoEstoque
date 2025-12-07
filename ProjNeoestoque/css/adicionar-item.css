@@ -1,0 +1,347 @@
+/* -----------------------
+   VARS
+   ------------------------- */
+:root {
+    --bg-color: #f0f4f8;       /* Fundo do corpo */
+    --card-bg: #ffffff;        /* Fundo dos cards */
+    --primary-dark: #19192A;   /* Azul escuro (Botões, Logo) */
+    --text-primary: #333;      /* Texto principal */
+    --text-secondary: #777;    /* Texto secundário */
+    --border-color: #e0e0e0;   /* Bordas */
+    --border-radius: 12px;     /* Arredondamento */
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* -----------------
+   base
+   -------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* ------------------------
+   header
+   ------------------------- */
+.web-header {
+    background-color: var(--card-bg);
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 24px;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.logo img {
+    height: 85px;
+    width: auto;
+    max-width: 150px;
+}
+
+/* User area */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-avatar {
+    width: 44px;
+    height: 44px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: var(--text-secondary);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.user-avatar-link {
+    text-decoration: none;
+    display: block;
+}
+
+.user-avatar-link:hover .user-avatar {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.user-info span {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* ----------------------
+   container e titulo
+   ---------------------- */
+.page-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.page-header-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.page-header-card h2 {
+    margin-bottom: 0;
+}
+
+/* ---------------
+   Layout
+   --------------- */
+.add-item-form {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Coluna inputs maior, coluna foto menor */
+    gap: 32px;
+}
+
+.form-fields-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+/* -----------------------------
+   Formulários
+   ----------------------------- */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    height: 44px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background-color: var(--card-bg);
+    padding: 0 16px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-primary);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Efeito */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-dark);
+    box-shadow: 0 0 0 3px rgba(25, 25, 42, 0.1);
+}
+
+/* Ajuste importante */
+.form-group textarea {
+    height: auto;
+    min-height: 120px; /* Se mudar quebra a formatação */
+    padding: 12px 16px;
+    resize: vertical;
+}
+
+.form-group select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* seta custom */
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23777" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 16px;
+    cursor: pointer;
+}
+
+/* -------------------------------
+   Inserir foto
+   -------------------------------- */
+.photo-uploader {
+    position: relative;
+    width: 100%;
+    min-height: 180px;
+    border: 2px dashed var(--border-color);
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.3s, background-color 0.3s;
+    overflow: hidden;
+}
+
+.photo-uploader:hover {
+    border-color: var(--primary-dark);
+    background-color: #fcfcfc;
+}
+
+.photo-input-hidden {
+    display: none;
+}
+
+.photo-uploader-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 24px;
+    cursor: pointer;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+.photo-uploader-label svg {
+    margin-bottom: 12px;
+    color: var(--text-secondary);
+    transition: color 0.3s;
+}
+
+.photo-uploader-label span {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.photo-uploader-label .photo-uploader-hint {
+    font-size: 0.8rem;
+    color: #aaa;
+    margin-top: 4px;
+}
+
+.photo-uploader-label:hover svg,
+.photo-uploader-label:hover {
+    color: var(--primary-dark);
+}
+
+/* ----------------------
+   Botões
+   ---------------------- */
+.form-actions {
+    grid-column: 1 / -1; /* largura total */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 24px;
+    margin-top: 16px;
+}
+
+/* base para os Botões */
+.form-actions .btn,
+.form-actions .btn-secondary {
+    padding: 12px 32px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+/* Botão Cancelar */
+.form-actions .btn-secondary {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    color: #666;
+}
+
+.form-actions .btn-secondary:hover {
+    background-color: #f0f0f0;
+    color: #333;
+    border-color: #bbb;
+}
+
+/* Botão Salvar */
+.form-actions .btn {
+    background-color: var(--primary-dark);
+    color: #fff;
+}
+
+.form-actions .btn:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* --------------------------
+   RESPONSIVIDADE 
+   ---------------------------*/
+@media (max-width: 768px) {
+    .add-item-form {
+        grid-template-columns: 1fr; /* 1 coluna */
+        gap: 24px;
+    }
+
+    .form-photo-column {
+        order: -1; /* Foto no topo */
+    }
+
+    .form-group-row {
+        grid-template-columns: 1fr; /* lado a lado empilhados */
+        gap: 20px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions .btn,
+    .form-actions .btn-secondary {
+        width: 100%; /* botão largura total */
+    }
+
+    .form-actions .btn {
+        order: -1; /* Botão salvar 1st*/
+    }
+}

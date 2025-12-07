@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoEstoque - Visualizar Estoque</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/ver-estoque.css">
+</head>
+
+<body>
+
+   <header class="web-header">
+        <a href="index.html" class="logo">
+            <img src="./img/logo-neoestoque.png" alt="NeoEstoque logo">
+        </a>
+
+        <div class="user-info">
+            <a href="perfil.html" class="user-avatar-link">
+                <div class="user-avatar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+            </a>
+            </div>
+    </header>
+
+    <div class="page-container">
+
+        <div class="card page-header-card">
+            <h2>Meu Estoque</h2>
+            <a href="index.html" class="btn btn-secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Voltar ao Dashboard
+            </a>
+        </div>
+
+        <div class="stock-grid">
+            <p style="grid-column: 1/-1; text-align:center; color: #999;">Carregando estoque...</p>
+        </div>
+
+    </div> 
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,330 @@
+/* ------------
+   VARS
+   ------------ */
+:root {
+    --bg-color: #f0f4f8;       
+    --card-bg: #ffffff;        
+    --primary-dark: #19192A;   
+    --text-primary: #333;      
+    --text-secondary: #777;    
+    --border-color: #e0e0e0;   
+    --border-radius: 12px;    
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* ---------------
+   RESET E BASE
+   ---------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* ----------------------------
+   HEADER
+   ---------------------------- */
+.web-header {
+    background-color: var(--card-bg);
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 24px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-avatar {
+    width: 44px;
+    height: 44px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: var(--text-secondary);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.user-avatar-link {
+    text-decoration: none;
+    display: block;
+}
+
+.user-avatar-link:hover .user-avatar {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.user-info span {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.logo img {
+    height: 85px;
+    width: auto;
+    max-width: 150px;
+}
+
+/* ---------------------
+   LAYOUT DA PÁGINA
+   --------------------- */
+.page-container {
+    max-width: 1400px; /* Largura expandida */
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.page-header-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.page-header-card h2 {
+    margin-bottom: 0;
+}
+
+/* ---------------------------
+   GRID DE ESTOQUE 
+   --------------------------- */
+.stock-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.stock-item-card {
+    background-color: var(--card-bg); /*fundo branco */
+    border-radius: var(--border-radius); /* Arredondamento */
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    box-shadow: var(--card-shadow); /* Sombra */
+}
+
+.stock-item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Imagem do Item */
+.item-photo {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    display: flex;            /* Centraliza */
+    align-items: center;
+    justify-content: center;
+}
+
+.item-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Preenche */
+}
+
+/* Conteúdo */
+.item-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex-grow: 1;
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.item-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.item-category {
+    background-color: var(--bg-color);
+    color: var(--text-secondary);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.item-description {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-clamp: 3; /* Limita a 3 linhas */
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+/* =-------------------------
+   ESTATÍSTICAS E CONTROLES
+   --------------------------- */
+.item-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 14px;
+    margin-top: auto;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat span {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 2px;
+}
+
+.stat strong {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+/* Estoque Baixo red */
+.stat .low-stock,
+.stat strong.low-stock {
+    color: #dc3545;
+    font-weight: 700;
+}
+
+/* Container + - */
+.qtd-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #f8f9fa;
+    padding: 4px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    width: fit-content; /* Ocupa necessário */
+}
+
+/* Botões Individuais */
+.btn-qtd {
+    width: 28px;
+    height: 28px;
+    border: none;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--primary-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.btn-qtd:hover {
+    background-color: var(--primary-dark);
+    color: white;
+}
+
+.btn-qtd.minus:hover {
+    background-color: #dc3545;
+}
+
+.btn-qtd.plus:hover {
+    background-color: #28a745;
+}
+
+/* Input Numérico */
+.qtd-input {
+    width: 50px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    background-color: transparent;
+    color: var(--text-primary);
+    -moz-appearance: textfield; /* Remove setinhas no Firefox */
+}
+
+.qtd-input:focus {
+    border-radius: 4px;
+    background-color: #fff;
+    outline: none; /* Remove borda azul padrão */
+}
+
+.qtd-input::-webkit-outer-spin-button,
+.qtd-input::-webkit-inner-spin-button {
+    -webkit-appearance: none; /* remove setinhas no Chrome/Safari */
+    margin: 0;
+}
+
+.qtd-input.low-stock {
+    color: #dc3545;
+}
+
+/* -----------------
+   RESPONSIVIDADE
+   -----------------*/
+@media (max-width: 768px) {
+    .page-container {
+        padding: 0 16px;
+    }
+
+    .stock-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 16px;
+    }
+
+    .item-content {
+        padding: 16px;
+    }
+}

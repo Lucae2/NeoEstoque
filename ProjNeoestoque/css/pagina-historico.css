@@ -1,0 +1,179 @@
+/* --------------------
+   VARS
+   -------------------- */
+:root {
+    --bg-color: #f0f4f8;      
+    --card-bg: #ffffff;        
+    --primary-dark: #19192A;   
+    --text-primary: #333;     
+    --text-secondary: #777;   
+    --border-color: #e0e0e0;   
+    --border-radius: 12px;     
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* ------------------
+   RESET E BASE
+   ------------------ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* --------------------
+   HEADER
+   -------------------- */
+.web-header {
+    background-color: var(--card-bg);
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 24px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-avatar {
+    width: 44px;
+    height: 44px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: var(--text-secondary);
+    transition: transform 0.3s ease;
+}
+
+.user-avatar-link:hover .user-avatar {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.logo img {
+    height: 85px;
+    width: auto;
+    max-width: 150px;
+}
+
+/* ------------------
+   LAYOUT
+   ------------------ */
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.page-header-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.page-header-card h2 {
+    margin-bottom: 0;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 24px;
+}
+
+/* ----------
+   BOTÕES
+   ----------- */
+.btn.btn-secondary {
+    background-color: white;
+    color: var(--primary-dark);
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.btn.btn-secondary:hover {
+    background-color: #f0f0f0;
+}
+
+/* ---------------------
+   TABELA DE HISTÓRICO
+   --------------------- */
+.history-list-card {
+    padding: 0; /* Remove padding */
+    overflow: hidden;
+}
+
+.table-responsive-wrapper {
+    overflow-x: auto; /* Scroll horizontal */
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px; /* Força largura mínima para não quebrar*/
+}
+
+.history-table th,
+.history-table td {
+    padding: 16px 24px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.history-table th {
+    background-color: #f9fafa;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.history-table tr:last-child td {
+    border-bottom: none; /* Remove borda da última linha */
+}
+
+/* -----------------------
+   Entrada e saida badge
+   ------------------------ */
+.tipo-entrada {
+    color: #28a745;
+    font-weight: 700;
+    background: rgba(40, 167, 69, 0.1);
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.tipo-saida {
+    color: #dc3545;
+    font-weight: 700;
+    background: rgba(220, 53, 69, 0.1);
+    padding: 4px 8px;
+    border-radius: 4px;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoEstoque - Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+
+    <header class="web-header">
+        <a href="index.html" class="logo">
+            <img src="./img/logo-neoestoque.png" alt="NeoEstoque logo">
+        </a>
+
+        <div class="user-info">
+            <a href="perfil.html" class="user-avatar-link">
+                <div class="user-avatar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+            </a>
+            </div>
+    </header>
+
+    <div class="web-container">
+
+        <main class="main-content">
+            <section class="placeholder-banner card">
+                <img src="./img/caixas-estoque.png" alt="Banner Placeholder">
+            </section>
+
+            <section class="search-filter">
+                <div class="search-bar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" placeholder="Buscar Item">
+                </div>
+
+                <div class="filter-wrapper">
+                    <button class="filter-btn" id="filterBtn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                        </svg>
+                    </button>
+
+                    <div class="category-dropdown" id="categoryMenu">
+                        <div class="dropdown-item" data-cat="">Todos</div> <div class="dropdown-item" data-cat="Computadores e Acessórios">Computadores e Acessórios</div>
+                        <div class="dropdown-item" data-cat="Games e Entretenimento">Games e Entretenimento</div>
+                        <div class="dropdown-item" data-cat="Casa Inteligente">Casa Inteligente</div>
+                        <div class="dropdown-item" data-cat="Áudio e Vídeo">Áudio e Vídeo</div>
+                        <div class="dropdown-item" data-cat="Outros">Outros</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="movements-history">
+                <h2>Histórico de movimentações</h2>
+
+                <a href="pagina-historico.html" class="history-card-link card">
+                    <img src="./img/grafico.jpg" alt="Ver histórico de movimentações">
+                </a>
+            </section>
+        </main>
+
+        <aside class="sidebar">
+            <section class="quick-actions">
+                <h2>Ações rápidas</h2>
+
+                <div class="action-card card">
+                    <a href="adicionar-item.html" class="btn">Adicionar item</a>
+                </div>
+
+                <div class="action-card card">
+                    <a href="ver-estoque.html" class="btn">Ver estoque</a>
+                </div>
+
+            </section>
+        </aside>
+
+    </div>
+</body>
+
+</html>

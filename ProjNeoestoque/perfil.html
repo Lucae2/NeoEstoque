@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoEstoque - Meu Perfil</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/perfil.css">
+</head>
+
+<body>
+
+    <header class="web-header">
+        <a href="index.html" class="logo">
+            <img src="./img/logo-neoestoque.png" alt="NeoEstoque logo">
+        </a>
+
+        <div class="user-info">
+            <a href="perfil.html" class="user-avatar-link">
+                <div class="user-avatar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+            </a>
+        </div>
+    </header>
+
+    <div class="page-container">
+
+        <a href="index.html" class="btn btn-secondary btn-voltar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Voltar ao Dashboard
+        </a>
+
+        <div class="card profile-summary-card">
+            <div class="profile-avatar-large">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+            </div>
+            <h3>Ana Silva</h3>
+            <p>ana.silva@neoestoque.com</p>
+        </div>
+
+        <div class="card profile-details-card">
+            <h2>Informações da Conta</h2>
+            <form class="profile-form">
+                <div class="form-group">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" value="Ana Silva" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" value="ana.silva@neoestoque.com" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="departamento">Departamento</label>
+                    <input type="text" id="departamento" value="Logística" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="cargo">Cargo</label>
+                    <input type="text" id="cargo" value="Gerente de Estoque" disabled>
+                </div>
+            </form>
+        </div>
+
+        <div class="card profile-actions-card">
+            <h2>Ações</h2>
+            <a href="#" class="btn">Alterar Senha</a>
+            <a href="login.html" class="btn btn-danger">Sair da Conta</a>
+        </div>
+
+    </div> 
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

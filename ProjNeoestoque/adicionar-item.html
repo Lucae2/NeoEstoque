@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoEstoque - Adicionar Item</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/adicionar-item.css">
+</head>
+
+<body>
+
+    <header class="web-header">
+        <a href="index.html" class="logo">
+            <img src="./img/logo-neoestoque.png" alt="NeoEstoque logo">
+        </a>
+
+        <div class="user-info">
+            <a href="perfil.html" class="user-avatar-link">
+                <div class="user-avatar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+            </a>
+        </div>
+    </header>
+
+    <div class="page-container">
+
+        <div class="card page-header-card">
+            <h2>Adicionar Novo Item ao Estoque</h2>
+            <a href="index.html" class="btn btn-secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Voltar ao Dashboard
+            </a>
+        </div>
+
+        <div class="card add-item-form-card">
+            <form class="add-item-form">
+
+                <div class="form-fields-column">
+                    <div class="form-group">
+                        <label for="nome">Nome do Produto</label>
+                        <input type="text" id="nome" placeholder="Ex: Fone de ouvido" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="categoria">Categoria</label>
+                        <select id="categoria" required>
+                            <option value="" disabled selected>Selecione uma categoria</option>
+                            <option value="Computadores e Acessórios">Computadores e Acessórios</option>
+                            <option value="Games e Entretenimento">Games e Entretenimento</option>
+                            <option value="Casa Inteligente">Casa Inteligente</option>
+                            <option value="Áudio e Vídeo">Áudio e Vídeo</option>
+                            <option value="Outros">Outros</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <label for="quantidade">Quantidade</label>
+                            <input type="number" id="quantidade" placeholder="0" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="preco">Preço Unitário (R$)</label>
+                            <input type="number" id="preco" step="0.01" min="0" placeholder="0,00">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descricao">Descrição</label>
+                        <textarea id="descricao" rows="4" placeholder="Detalhes, especificações, localização no estoque..."></textarea>
+                    </div>
+                </div>
+
+                <div class="form-photo-column">
+                    <div class="form-group photo-upload-group">
+                        <label for="foto">Foto do Produto</label>
+                        <div class="photo-uploader">
+                            <input type="file" id="foto" class="photo-input-hidden" accept="image/*">
+                            
+                            <label for="foto" class="photo-uploader-label">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                                <span>Arraste ou clique aqui</span>
+                                <span class="photo-uploader-hint">PNG, JPG (máx. 5MB)</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <a href="index.html" class="btn-secondary">Cancelar</a>
+                    <button type="submit" class="btn">Salvar Item</button>
+                </div>
+
+            </form>
+        </div>
+
+    </div> 
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
